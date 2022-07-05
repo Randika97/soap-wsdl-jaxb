@@ -22,10 +22,10 @@ public class WSConfig extends WsConfigurerAdapter {
 		servlet.setTransformWsdlLocations(true);
 		return new ServletRegistrationBean(servlet, "/soapws/*");
 	}
-	@Bean(name = "articles")
+	@Bean(name = "employee")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema articlesSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("ArticlesPort");
+		wsdl11Definition.setPortTypeName("EmployeePort");
 		wsdl11Definition.setLocationUri("/soapws");
 		wsdl11Definition.setTargetNamespace("http://www.concretepage.com/article-ws");
 		wsdl11Definition.setSchema(articlesSchema);
@@ -33,6 +33,6 @@ public class WSConfig extends WsConfigurerAdapter {
 	}
 	@Bean
 	public XsdSchema articlesSchema() {
-		return new SimpleXsdSchema(new ClassPathResource("xsds/articles.xsd"));
+		return new SimpleXsdSchema(new ClassPathResource("xsds/employee.xsd"));
 	}
 }

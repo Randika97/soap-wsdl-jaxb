@@ -1,34 +1,35 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.concretepage.com/article-ws"
            targetNamespace="http://www.concretepage.com/article-ws" elementFormDefault="qualified">
 
-    <xs:element name="getArticleByIdRequest">
+    <xs:element name="getEmployeeByIdRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="articleId" type="xs:long"/>
+                <xs:element name="employeeId" type="xs:long"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="getArticleByIdResponse">
+    <xs:element name="getEmployeeByIdResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="articleInfo" type="tns:articleInfo"/>
+                <xs:element name="employeeInfo" type="tns:employeeInfo"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="articleInfo">
+    <xs:complexType name="employeeInfo">
         <xs:sequence>
-            <xs:element name="articleId" type="xs:long"/>
-            <xs:element name="title" type="xs:string"/>
-            <xs:element name="category" type="xs:string"/>
+            <xs:element name="employeeId" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="designation" type="xs:string"/>
+            <xs:element name="department" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:element name="getAllArticlesRequest">
+    <xs:element name="getAllEmployeeRequest">
         <xs:complexType/>
     </xs:element>    
-    <xs:element name="getAllArticlesResponse">
+    <xs:element name="getAllEmployeeResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="articleInfo" type="tns:articleInfo" maxOccurs="unbounded"/>
+                <xs:element name="employeeInfo" type="tns:employeeInfo" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>   
@@ -38,48 +39,49 @@
             <xs:element name="message" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>     
-    <xs:element name="addArticleRequest">
+    <xs:element name="addEmployeeRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="title" type="xs:string"/>
-                <xs:element name="category" type="xs:string"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="designation" type="xs:string"/>
+                <xs:element name="department" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="addArticleResponse">
+    <xs:element name="addEmployeeResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>            
-                <xs:element name="articleInfo" type="tns:articleInfo"/>
+                <xs:element name="employeeInfo" type="tns:employeeInfo"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="updateArticleRequest">
+    <xs:element name="updateEmployeeRequest">
         <xs:complexType>
             <xs:sequence>
-               <xs:element name="articleInfo" type="tns:articleInfo"/>
+               <xs:element name="employeeInfo" type="tns:employeeInfo"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="updateArticleResponse">
+    <xs:element name="updateEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="employeeId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteEmployeeResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="serviceStatus" type="tns:serviceStatus"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="deleteArticleRequest">
-        <xs:complexType>
-            <xs:sequence>
-               <xs:element name="articleId" type="xs:long"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="deleteArticleResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>                   
 </xs:schema>
