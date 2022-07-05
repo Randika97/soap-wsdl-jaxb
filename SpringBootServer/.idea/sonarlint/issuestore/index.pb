@@ -11,5 +11,3 @@ c
 3src/main/java/com/training/soap/entity/Article.java,f\1\f19e4c046ec75963ce1cc94e0ff57de59538f48a
 d
 4src/main/java/com/training/soap/config/WSConfig.java,a\7\a771cca86490b5ac7b87318e06da9a6ef035cdfd
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
